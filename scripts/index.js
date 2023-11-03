@@ -23,6 +23,7 @@ function populateTeams() {
 
 function getAllTeams() {
     return [
+        {code:"SEL", name:"Please make a selection", plays:""},
         {code:"DAL", name:"Dallas Cowboys", plays:"Arlington, TX"},
         {code:"DEN", name:"Denver Broncos", plays:"Denver, CO"},
         {code:"HOU", name:"Houston Texans", plays:"Houston, TX"},
@@ -30,7 +31,7 @@ function getAllTeams() {
     ]
 }
 
-function findTeamById(code) {
+function findTeamByCode(code) {
     const teams = getAllTeams();
 
     for(let team of teams){
@@ -49,7 +50,7 @@ function buttonClicked(event) {
     // get the selected team id
     const teamCode = teamsList.value;
     // find the team with that id
-    const selectedTeam = findTeamById(teamCode);
+    const selectedTeam = findTeamByCode(teamCode);
 
     // display all team information
     document.getElementById("teamName").innerText = selectedTeam.name;
